@@ -23,7 +23,7 @@ class TaskManager extends Actor {
   override def receive: Receive = {
     case RunTask(definition) =>
       val task = context.actorOf(Props[Task], nextTaskName())
-      task ! Run("definition")
+      task ! Run("custom task definition")
 
     case TaskCompleted =>
   }
